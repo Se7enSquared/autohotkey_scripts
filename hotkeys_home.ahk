@@ -9,8 +9,8 @@
 ; (caret)               ^    CTRL
 ; (plus)                +    Shift
 
-ScriptDir = "\\wsl.localhost\Ubuntu\home\se7ensquared\git\autohotkey_scripts\"
-IniRead, pat, config.ini, Personal, pat
+ScriptDir = "C:\git\autohotkey_scripts\"
+IniRead, PAT, %ScriptDir%config.ini, Personal, pat
 
 ;******************************************************************************
 ;			Reload/Execute this script.ahk file
@@ -18,12 +18,16 @@ IniRead, pat, config.ini, Personal, pat
 ::rscript::
 ^!ScrollLock::          ; CTRL + ALT + Scroll Lock
 Run, %ScriptDir%"hotkeys_home.ahk"
+Return
 
 ;******************************************************************************
 ;			My info										                      ;
 ;******************************************************************************
 ::?mgh::
-SendInput Se7enSquared, {Enter}
+SendInput Se7enSquared
+Return
 
 ::?mghp::
-SendInput %pat%, {Enter}
+SendInput %PAT%
+Return
+
